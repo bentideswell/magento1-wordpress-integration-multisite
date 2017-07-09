@@ -1,0 +1,101 @@
+###############################################################
+#
+# Fishpig's WordPress Multisite Integration for Magento eCommerce
+#
+###############################################################
+#
+# Author: 					FishPig Limited (Ben Tideswell)
+# Documentation: 	http://fishpig.co.uk/magento/wordpress/multisite/
+# Bug Reports: 		help@fishpig.co.uk
+#
+###############################################################
+
+16/05/2015 - 2.1.1.2
+- Fixed issue related to site ID's and image URLs.
+
+28/10/2015 - 2.1.1.1
+- Updated for compatibility with Visual Composer, GravityForms, Contact Form 7 and The Events Calendar integrations.
+
+04/09/2015 - 2.1.0.0
+- Added licensing to the extension.
+
+09/06/2015 - 2.0.0.0
+- Added support for Magento WordPress Integration v4.0.0.0
+
+10/07/2013 - 1.4.0.0
+- Added support for WordPress Integration v3.0
+
+23/05/2013 - 1.3.0.3
+- Added fix for setting invalid blog ID
+
+14/04/2013 - 1.3.0.2
+- Fixed issue when WP DB not connected in Admin
+
+02/04/2013 - 1.3.0.1
+- Added try/catch block to blog ID source model. This stops an exception occuring when viewing the configuration and WPMU is not installed.
+
+01/04/2013 - 1.3.0.0
+- Version 1.3 no longer requires the WordPress plugin to be installed so this can be deleted now. Check out http://fishpig.co.uk/wordpress-multisite-integration.html#docs for information on changing your WP settings to correctly set the integrated blog URL.
+
+31/03/2013 - 1.2.0.10
+- Added fix for Disqus comment synchronising
+
+30/03/2013 - 1.2.0.9
+- Added backwards compatibility for Magento 1.4.2.0 and 1.5.*
+
+27/03/2013 - 1.2.0.8
+- Changed WP plugin path reference in integration test results
+
+25/01/2013 - 1.2.0.7
+- Small change to WP plugin to fix issue with XML sitemaps
+
+22/01/2013 - 1.2.0.3
+- Added option to enable/disable in store and store view
+
+17/01/2013 - 1.2.0.2
+- Added fix for CF7 that stops the FP plugin redirecting post requests
+
+13/10/2012 - 1.2.0.1
+- Added resource update to try and delete old extension
+- Added integration test to warn about old extension
+
+02/10/2012 - 1.2.0.0
+- MIgrated extension to app/code/community/FIshpig/Wordpress/Addon/Multisite. This will allow users to manage their WP Integration extensions easier.
+
+18/09/2012 - 1.1.2
+- Removed renaming of WordPress > Settings > Setup from adminhtml.xml
+- Added improved redirects to WordPress plugin
+
+23/08/2012 - 1.1.1
+- Stopped integration tests when using semi-integration
+- Changed default options so that default store is enabled
+
+11/08/2012 - 1.1.0
+- Added check to ensure WordPress has WordPress MU activated
+- Converted /db WP helper to /database
+
+31/07/2012 - 1.0.15
+- Improved WP plugin error messages
+- Added support for new WordPress Integration database API to get ready for BuddyPress Integration
+
+31/07/2012 - 1.0.14
+- Added Site ID option (defaults to 1, which is correct for most). This fixes an issue that caused ShareThis to not function on specific blogs
+
+18/07/2012 - 1.0.12
+- Added ability to disable extension from the Magento configuration
+
+17/07/2012 - 1.0.11
+- Improved configuration options
+
+01/06/2012 - 1.0.9
+- Added fix for All In One SEO not working for default site
+
+17/05/2012 - 1.0.7
+- Fixed issue with WP plugin version
+
+17/04/2012 - 1.0.6
+- Added fix so that selecting 'No' in WordPress plugin sticks
+- Added fix that caused issues with canRun (this always returns true for now)
+
+10/04/2012 - 1.0.5
+- Added improvements for WP redirects
