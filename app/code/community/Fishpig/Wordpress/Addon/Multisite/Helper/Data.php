@@ -1,9 +1,10 @@
 <?php
-/**
+/*
  * @category    Fishpig
  * @package     Fishpig_Wordpress
  * @license     http://fishpig.co.uk/license.txt
  * @author      Ben Tideswell <help@fishpig.co.uk>
+ * @Obfuscate
  */
 
 class Fishpig_Wordpress_Addon_Multisite_Helper_Data extends Fishpig_Wordpress_Helper_Abstract
