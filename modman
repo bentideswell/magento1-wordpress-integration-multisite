@@ -1,3 +1,2 @@
-app/code/community/Fishpig/Wordpress/Addon/Multisite		app/code/community/Fishpig/Wordpress/Addon/Multisite
-app/etc/modules/Fishpig_Wordpress_Addon_Multisite.xml	app/etc/modules/Fishpig_Wordpress_Addon_Multisite.xml
-var/connect/Fishpig_Wordpress_MU_Integration.xml				var/connect/Fishpig_Wordpress_MU_Integration.xml
+app/code/community/Fishpig/Wordpress/Addon/Multisite    app/code/community/Fishpig/Wordpress/Addon/Multisite
+app/etc/modules/Fishpig_Wordpress_Addon_Multisite.xml	  app/etc/modules/Fishpig_Wordpress_Addon_Multisite.xml
