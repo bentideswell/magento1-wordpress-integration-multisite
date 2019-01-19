@@ -2,7 +2,7 @@
 <config>
 	<modules>
 		<Fishpig_Wordpress_Addon_Multisite>
-			<version>2.1.1.4</version>
+			<version>2.2.0.0</version>
 			<fishpig>
 				<id />
 				<name>Multisite Integration</name>
@@ -30,6 +30,19 @@
 			</wp_addon_multisite>
 		</models>
 	</global>
+	<frontend>
+		<events>
+			<wordpress_post_view_render_layout_after>
+				<observers>
+					<wp_addon_multisite>
+						<type>singleton</type>
+						<class>Fishpig_Wordpress_Addon_Multisite_Model_Observer</class>
+						<method>addHrefLangTagsObserver</method>
+					</wp_addon_multisite>
+				</observers>
+			</wordpress_post_view_render_layout_after>
+		</events>
+	</frontend>
 	<default>
 		<wordpress>
 			<mu>

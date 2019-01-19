@@ -9,6 +9,8 @@
 # Bug Reports: 		help@fishpig.co.uk
 #
 ###############################################################
+19/01/2019 - 2.2.0.0
+- Added support for https://www.hreflangtags.com/
 
 16/05/2015 - 2.1.1.2
 - Fixed issue related to site ID's and image URLs.
