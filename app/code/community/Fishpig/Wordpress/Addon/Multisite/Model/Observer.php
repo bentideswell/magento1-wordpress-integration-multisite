@@ -10,7 +10,7 @@ class Fishpig_Wordpress_Addon_Multisite_Model_Observer
 	 * @param  Varien_Event_Observer $observer
 	 * @return $this
 	 */
-	public function addHrefLangTagsObserver(Varien_Event_Observer $observer)
+	public function addPostViewHrefLangTagsObserver(Varien_Event_Observer $observer)
 	{
 		$post = $observer->getEvent()->getObject();
 		$db   = Mage::helper('wordpress/app')->getDbConnection();
@@ -34,7 +34,7 @@ class Fishpig_Wordpress_Addon_Multisite_Model_Observer
 			$headBlock->addItem(
 				'link_rel', 
 				$post->getPermalink(), 
-				'rel="alternate" hreflang="' . $htmlLang . '"'
+				'rel="alternate" hreflang="' . $this->cleanLang($htmlLang) . '"'
 			);
 		}
 
@@ -42,10 +42,60 @@ class Fishpig_Wordpress_Addon_Multisite_Model_Observer
 			$headBlock->addItem(
 				'link_rel', 
 				$url, 
-				'rel="alternate" hreflang="' . str_replace('hreflang-', '', $lang) . '"'
+				'rel="alternate" hreflang="' . str_replace('hreflang-', '', $this->cleanLang($lang)) . '"'
 			);
 		}
 		
 		return $this;
+	}
+
+	/*
+	 * Adds support for https://www.hreflangtags.com/
+	 *
+	 * @param  Varien_Event_Observer $observer
+	 * @return $this
+	 */	
+	public function addPostListHrefLangTagsObserver(Varien_Event_Observer $observer)
+	{
+		if ((int)Mage::helper('wordpress')->getWpOption('hreflang_pro_allow_blog_tags') === 0) {
+			return $this;
+		}
+
+		$layout = Mage::getSingleton('core/layout');
+		
+		if (!($headBlock = $layout->getBlock('head'))) {
+			return $this;
+		}
+		
+		if (($tags = trim(Mage::helper('wordpress')->getWpOption('hreflang_pro_blog_tags'))) === '') {
+			return $this;
+		}
+		
+		if (!($tags = @unserialize($tags))) {
+			return $this;
+		}
+
+		$tags = array_combine($tags['hreflang'], $tags['href']);
+		
+		foreach($tags as $lang => $url) {
+			$headBlock->addItem(
+				'link_rel', 
+				$url, 
+				'rel="alternate" hreflang="' . $this->cleanLang($lang) . '"'
+			);
+		}
+		
+		return $this;
+	}
+	
+	/**
+	 * Clean a $lang string
+	 *
+	 * @param  string $lang
+	 * @return string
+	 */
+	protected function cleanLang($lang)
+	{
+		return str_replace('_', '-', $lang);		
 	}
 }

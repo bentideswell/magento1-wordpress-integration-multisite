@@ -1,14 +1,18 @@
 ###############################################################
 #
-# Fishpig's WordPress Multisite Integration for Magento eCommerce
+# FishPig's WordPress Multisite Integration for Magento eCommerce
 #
 ###############################################################
 #
-# Author: 					FishPig Limited (Ben Tideswell)
-# Documentation: 	http://fishpig.co.uk/magento/wordpress/multisite/
-# Bug Reports: 		help@fishpig.co.uk
+# Author: 			  FishPig Limited (Ben Tideswell)
+# Documentation: 	https://fishpig.co.uk/magento/wordpress-integration/multisite/
+# Bug Reports: 		ben@fishpig.co.uk
 #
 ###############################################################
+
+22/01/2019 - 2.2.0.1
+- Added more support for https://www.hreflangtags.com/
+
 19/01/2019 - 2.2.0.0
 - Added support for https://www.hreflangtags.com/
 

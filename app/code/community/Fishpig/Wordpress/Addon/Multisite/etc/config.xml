@@ -2,11 +2,11 @@
 <config>
 	<modules>
 		<Fishpig_Wordpress_Addon_Multisite>
-			<version>2.2.0.0</version>
+			<version>2.2.0.1</version>
 			<fishpig>
 				<id />
 				<name>Multisite Integration</name>
-				<url>http://fishpig.co.uk/magento/wordpress-integration/multisite/</url>
+				<url>https://fishpig.co.uk/magento/wordpress-integration/multisite/</url>
 			</fishpig>
 		</Fishpig_Wordpress_Addon_Multisite>
 	</modules>
@@ -37,10 +37,19 @@
 					<wp_addon_multisite>
 						<type>singleton</type>
 						<class>Fishpig_Wordpress_Addon_Multisite_Model_Observer</class>
-						<method>addHrefLangTagsObserver</method>
+						<method>addPostViewHrefLangTagsObserver</method>
 					</wp_addon_multisite>
 				</observers>
 			</wordpress_post_view_render_layout_after>
+			<wordpress_index_index_render_layout_after>
+				<observers>
+					<wp_addon_multisite>
+						<type>singleton</type>
+						<class>Fishpig_Wordpress_Addon_Multisite_Model_Observer</class>
+						<method>addPostListHrefLangTagsObserver</method>
+					</wp_addon_multisite>
+				</observers>
+			</wordpress_index_index_render_layout_after>
 		</events>
 	</frontend>
 	<default>
