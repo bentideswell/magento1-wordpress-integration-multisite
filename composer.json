@@ -1,6 +1,6 @@
 {
-    "name": "bentideswell/magento1-wordpress-integration-multisite",
+    "name": "fishpig/magento1-wordpress-integration-multisite",
     "description": "",
-    "version": "2.2.0.18",
+    "version": "2.2.0.19",
     "type": "magento-module"
 }
